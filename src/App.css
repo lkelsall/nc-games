@@ -11,6 +11,9 @@
   grid-area: header;
 }
 
+.Header #username {
+}
+
 .Nav {
   grid-area: nav;
 }
