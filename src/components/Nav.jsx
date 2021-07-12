@@ -12,7 +12,9 @@ const Nav = () => {
   return (
     <div className="Nav">
       {categories.map((category) => (
-        <Link to={`/reviews/category/${category.slug}`}>{category.slug}</Link>
+        <Link key={category.slug} to={`/reviews/category/${category.slug}`}>
+          {category.slug}
+        </Link>
       ))}
     </div>
   );
