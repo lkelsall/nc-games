@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 
 const Reviews = () => {
-  const { category } = useParams();
+  const { category_slug } = useParams();
   return (
     <div className="Reviews">
-      {category ? <h2>{category}</h2> : null}
+      {category_slug ? <h2>{category_slug}</h2> : null}
       <ul>
         <li>Review</li>
         <li>Review</li>
