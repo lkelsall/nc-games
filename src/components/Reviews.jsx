@@ -1,6 +1,6 @@
 const Reviews = () => {
   return (
-    <div>
+    <div className="Reviews">
       <ul>
         <li>Review</li>
         <li>Review</li>

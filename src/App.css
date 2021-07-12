@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+  grid-template-areas: "header" "nav" "reviews";
+  min-height: 100vh;
+}
+
+.Header {
+  grid-area: header;
+}
+
+.Nav {
+  grid-area: nav;
+}
+
+.Reviews {
+  grid-area: reviews;
 }
 
 .App-logo {
