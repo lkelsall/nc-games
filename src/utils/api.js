@@ -5,8 +5,13 @@ const reviewsAPI = axios.create({
 });
 
 export const getCategories = async () => {
-  const { data } = await reviewsAPI.get(
-    "https://board-game-reviews.herokuapp.com/api/categories"
-  );
+  const { data } = await reviewsAPI.get("/categories");
   return data.categories;
+};
+
+export const getReviews = async (category) => {
+  const { data } = await reviewsAPI.get("/reviews", {
+    params: { category: category },
+  });
+  return data.reviews;
 };
