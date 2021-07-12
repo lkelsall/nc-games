@@ -1,3 +1,4 @@
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
@@ -8,7 +9,14 @@ function App() {
     <div className="App">
       <Header />
       <Nav />
-      <Reviews />
+      <Switch>
+        <Route path="/reviews/:category">
+          <Reviews />
+        </Route>
+        <Route path="/">
+          <Reviews />
+        </Route>
+      </Switch>
     </div>
   );
 }
