@@ -6,7 +6,10 @@ const Header = () => {
   const { user } = useContext(UserContext);
   return (
     <div className="Header">
-      <Link to="/">NC Games {user}</Link>
+      <Link className="page-title" to="/">
+        <h1>NC Games</h1>
+      </Link>
+      <h3 className="user">{user}</h3>
     </div>
   );
 };

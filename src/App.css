@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content min-content auto;
@@ -9,6 +8,18 @@
 
 .Header {
   grid-area: header;
+  display: grid;
+  grid-template-columns: 20% 20% min-content auto min-content;
+  grid-template-rows: 100%;
+  grid-template-areas: ". . page-title . user";
+}
+
+.page-title {
+  grid-area: page-title;
+}
+
+.user {
+  grid-area: user;
 }
 
 .Nav {
@@ -22,7 +33,6 @@
 .h-scroll {
   overflow: auto;
   white-space: nowrap;
-  margin: 1em;
 }
 
 .category-link {
