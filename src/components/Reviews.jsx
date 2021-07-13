@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviews, getSingleReview, getComments } from "../utils/api";
 import Expandable from "./Expandable";
-import ReviewVotes from "./ReviewVotes";
+import Upvote from "./Upvote";
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -41,7 +41,7 @@ const Reviews = () => {
             <li key={review.review_id}>
               <h4>{review.title} </h4>
               <p>{review.review_body}</p>
-              <ReviewVotes review={review} />
+              <Upvote review={review} />
               <h5>Comments</h5>
               <Expandable>
                 {review.comments.map((comment) => {

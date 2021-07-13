@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { incrementReviewVotes } from "../utils/api";
 
-const ReviewVotes = ({ review }) => {
+const Upvote = ({ review }) => {
   const [votesAdded, setVotesAdded] = useState(0);
   const [clicked, setClicked] = useState(false);
 
@@ -24,4 +24,4 @@ const ReviewVotes = ({ review }) => {
   );
 };
 
-export default ReviewVotes;
+export default Upvote;
