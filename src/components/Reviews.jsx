@@ -22,8 +22,11 @@ const Reviews = () => {
         return Promise.all([...commentReqs, reviews]);
       })
       .then((comments) => {
-        // combine the reviews and comments objects (using their indices?) and setReviews to that
-        setReviews(comments.pop());
+        const reviews = comments.pop();
+        reviews.forEach((review, i) => {
+          review.comments = comments[i];
+        });
+        setReviews(reviews);
       });
   }, [category_slug]);
 
@@ -32,7 +35,14 @@ const Reviews = () => {
       {category_slug ? <h2>{category_slug}</h2> : null}
       <ul>
         {reviews.map((review) => {
-          return <li key={review.review_id}>{review.title}</li>;
+          return (
+            <li key={review.review_id}>
+              <h4>{review.title}</h4> <h5>Comments</h5>
+              {review.comments.map((comment) => {
+                return <p>{comment.body}</p>;
+              })}
+            </li>
+          );
         })}
       </ul>
     </div>
