@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviews, getSingleReview, getComments } from "../utils/api";
 import Expandable from "./Expandable";
+import ReviewVotes from "./ReviewVotes";
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -49,6 +50,7 @@ const Reviews = () => {
               <Link to={`/reviews/id/${review.review_id}`}>
                 <h5>Review Page</h5>
               </Link>
+              <ReviewVotes review={review} />
             </li>
           );
         })}

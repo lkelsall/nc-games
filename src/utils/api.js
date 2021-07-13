@@ -25,3 +25,7 @@ export const getComments = async (review_id) => {
   const { data } = await reviewsAPI.get(`/reviews/${review_id}/comments`);
   return data.comments;
 };
+
+export const incrementReviewVotes = async (review_id) => {
+  await reviewsAPI.patch(`/reviews/${review_id}`, { inc_votes: 1 });
+};
