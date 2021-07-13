@@ -15,3 +15,13 @@ export const getReviews = async (category) => {
   });
   return data.reviews;
 };
+
+export const getSingleReview = async (review_id) => {
+  const { data } = await reviewsAPI.get(`/reviews/${review_id}`);
+  return data.review;
+};
+
+export const getComments = async (review_id) => {
+  const { data } = await reviewsAPI.get(`/reviews/${review_id}/comments`);
+  return data.comments;
+};
