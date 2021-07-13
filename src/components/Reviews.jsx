@@ -41,6 +41,7 @@ const Reviews = () => {
             <li key={review.review_id}>
               <h4>{review.title} </h4>
               <p>{review.review_body}</p>
+              <ReviewVotes review={review} />
               <h5>Comments</h5>
               <Expandable>
                 {review.comments.map((comment) => {
@@ -50,7 +51,6 @@ const Reviews = () => {
               <Link to={`/reviews/id/${review.review_id}`}>
                 <h5>Review Page</h5>
               </Link>
-              <ReviewVotes review={review} />
             </li>
           );
         })}

@@ -3,18 +3,23 @@ import { incrementReviewVotes } from "../utils/api";
 
 const ReviewVotes = ({ review }) => {
   const [votesAdded, setVotesAdded] = useState(0);
+  const [clicked, setClicked] = useState(false);
 
   function upvote() {
     setVotesAdded((added) => added + 1);
+    setClicked(true);
     incrementReviewVotes(review.review_id).catch(() => {
       setVotesAdded((added) => added - 1);
+      setClicked(false);
     });
   }
 
   return (
     <div>
       {review.votes + votesAdded}
-      <button onClick={upvote}>Upvote</button>
+      <button disabled={clicked} onClick={upvote}>
+        Upvote
+      </button>
     </div>
   );
 };
