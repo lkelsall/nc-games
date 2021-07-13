@@ -48,7 +48,7 @@ const Reviews = () => {
                 {review.comments.map((comment) => {
                   return <p key={comment.comment_id}>{comment.body}</p>;
                 })}
-                <CommentBox review={review} />
+                <CommentBox review={review} setReviews={setReviews} />
               </Expandable>
               <Link to={`/reviews/id/${review.review_id}`}>
                 <h5>Review Page</h5>

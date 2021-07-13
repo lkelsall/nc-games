@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
 import { postComment } from "../utils/api";
 
-const CommentBox = ({ review }) => {
+const CommentBox = ({ review, setReviews }) => {
   const { user } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
@@ -17,7 +17,18 @@ const CommentBox = ({ review }) => {
             .then((comment) => {
               setNewComment("");
               setErr(null);
-              // review.comments.push(comment);
+              setReviews((currentReviews) => {
+                const updatedReviews = [...currentReviews];
+                updatedReviews.forEach((gameReview, i) => {
+                  if (gameReview.review_id === review.review_id) {
+                    updatedReviews[i].comments = [
+                      ...updatedReviews[i].comments,
+                      comment,
+                    ];
+                  }
+                });
+                return updatedReviews;
+              });
             })
             .catch(() => {
               setErr("something went wrong");
