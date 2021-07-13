@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getReviews, getSingleReview, getComments } from "../utils/api";
 
 const Reviews = () => {
@@ -37,10 +37,11 @@ const Reviews = () => {
         {reviews.map((review) => {
           return (
             <li key={review.review_id}>
-              <h4>{review.title}</h4> <h5>Comments</h5>
+              <h4>{review.title} </h4> <h5>Comments</h5>
               {review.comments.map((comment) => {
-                return <p>{comment.body}</p>;
+                return <p key={comment.comment_id}>{comment.body}</p>;
               })}
+              <Link to={`/reviews/id/${review.review_id}`}>Review Page</Link>
             </li>
           );
         })}
