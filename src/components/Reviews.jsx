@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviews, getSingleReview, getComments } from "../utils/api";
+import Expandable from "./Expandable";
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -37,11 +38,17 @@ const Reviews = () => {
         {reviews.map((review) => {
           return (
             <li key={review.review_id}>
-              <h4>{review.title} </h4> <h5>Comments</h5>
-              {review.comments.map((comment) => {
-                return <p key={comment.comment_id}>{comment.body}</p>;
-              })}
-              <Link to={`/reviews/id/${review.review_id}`}>Review Page</Link>
+              <h4>{review.title} </h4>
+              <p>{review.review_body}</p>
+              <h5>Comments</h5>
+              <Expandable>
+                {review.comments.map((comment) => {
+                  return <p key={comment.comment_id}>{comment.body}</p>;
+                })}
+              </Expandable>
+              <Link to={`/reviews/id/${review.review_id}`}>
+                <h5>Review Page</h5>
+              </Link>
             </li>
           );
         })}
