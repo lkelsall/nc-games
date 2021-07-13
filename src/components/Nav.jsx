@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getCategories } from "../utils/api";
+import HorizontalScroll from "./HorizontalScroll";
 
 const Nav = () => {
   const [categories, setCategories] = useState([]);
@@ -11,11 +12,17 @@ const Nav = () => {
   }, []);
   return (
     <div className="Nav">
-      {categories.map((category) => (
-        <Link key={category.slug} to={`/reviews/category/${category.slug}`}>
-          {category.slug}
-        </Link>
-      ))}
+      <HorizontalScroll>
+        {categories.map((category) => (
+          <Link
+            className="category-link"
+            key={category.slug}
+            to={`/reviews/category/${category.slug}`}
+          >
+            {category.slug}
+          </Link>
+        ))}
+      </HorizontalScroll>
     </div>
   );
 };

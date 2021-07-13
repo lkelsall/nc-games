@@ -19,6 +19,16 @@
   grid-area: reviews;
 }
 
+.h-scroll {
+  overflow: auto;
+  white-space: nowrap;
+  margin: 1em;
+}
+
+.category-link {
+  margin: 0.5em;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
