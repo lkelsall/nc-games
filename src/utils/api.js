@@ -26,6 +26,14 @@ export const getComments = async (review_id) => {
   return data.comments;
 };
 
-export const incrementReviewVotes = async (review_id) => {
+export const patchReviewVotes = async (review_id) => {
   await reviewsAPI.patch(`/reviews/${review_id}`, { inc_votes: 1 });
+};
+
+export const postComment = async (review_id, user, comment) => {
+  const { data } = await reviewsAPI.post(`/reviews/${review_id}/comments`, {
+    username: user,
+    body: comment,
+  });
+  return data.comment;
 };

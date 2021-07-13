@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviews, getSingleReview, getComments } from "../utils/api";
+import CommentBox from "./CommentBox";
 import Expandable from "./Expandable";
 import Upvote from "./Upvote";
 
@@ -47,6 +48,7 @@ const Reviews = () => {
                 {review.comments.map((comment) => {
                   return <p key={comment.comment_id}>{comment.body}</p>;
                 })}
+                <CommentBox review={review} />
               </Expandable>
               <Link to={`/reviews/id/${review.review_id}`}>
                 <h5>Review Page</h5>

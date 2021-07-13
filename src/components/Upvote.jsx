@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { incrementReviewVotes } from "../utils/api";
+import { patchReviewVotes } from "../utils/api";
 
 const Upvote = ({ review }) => {
   const [votesAdded, setVotesAdded] = useState(0);
@@ -8,7 +8,7 @@ const Upvote = ({ review }) => {
   function upvote() {
     setVotesAdded((added) => added + 1);
     setClicked(true);
-    incrementReviewVotes(review.review_id).catch(() => {
+    patchReviewVotes(review.review_id).catch(() => {
       setVotesAdded((added) => added - 1);
       setClicked(false);
     });
