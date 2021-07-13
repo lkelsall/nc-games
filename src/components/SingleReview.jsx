@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getSingleReview } from "../utils/api";
+import { getSingleReview, getComments } from "../utils/api";
 
 const SingleReview = () => {
   const { review_id } = useParams();
   const [review, setReview] = useState({});
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getSingleReview(review_id).then((review) => {
-      setReview(review);
-    });
+    Promise.all([getSingleReview(review_id), getComments(review_id)]).then(
+      ([review, comments]) => {
+        setReview(review);
+        setComments(comments);
+      }
+    );
   }, [review_id]);
 
   return (
     <div>
       <h1>{review.title}</h1>
       <p>{review.review_body}</p>
+      <ul>
+        {comments.map((comment) => {
+          return <li key={comment.comment_id}>{comment.body}</li>;
+        })}
+      </ul>
     </div>
   );
 };
