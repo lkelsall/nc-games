@@ -29,13 +29,16 @@ const CategoryLink = styled(Link)`
 
 const Nav = () => {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getCategories().then((categories) => {
       setCategories(categories);
+      setLoading(false);
     });
   }, []);
 
+  if (loading) return <div></div>;
   return (
     <NavWrapper>
       <HorizontalScroll>
