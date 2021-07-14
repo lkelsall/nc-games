@@ -1,12 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
-import "./App.css";
+import { UserContext } from "./contexts/user";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SingleReview from "./components/SingleReview";
 import Reviews from "./components/Reviews";
-import { UserContext } from "./contexts/user";
 
 const GridLayout = styled.div`
   display: grid;
