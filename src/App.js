@@ -12,7 +12,7 @@ const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content min-content auto;
-  grid-template-areas: "header" "nav" "reviews";
+  grid-template-areas: "header" "nav" "main";
   min-height: 100vh;
 `;
 

@@ -5,12 +5,10 @@ import { UserContext } from "../contexts/user";
 
 const HeaderWrapper = styled.div`
   grid-area: header;
-
   display: grid;
   grid-template-columns: max-content auto max-content;
   grid-template-rows: 100%;
   grid-template-areas: "page-title . user-detail";
-
   padding: 5%;
 `;
 

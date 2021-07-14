@@ -22,22 +22,22 @@
   grid-area: user;
 } */
 
-.Nav {
+/* .Nav {
   grid-area: nav;
-}
+} */
 
 .Reviews {
   grid-area: reviews;
 }
 
-.h-scroll {
+/* .h-scroll {
   overflow: auto;
   white-space: nowrap;
-}
+} */
 
-.category-link {
+/* .category-link {
   margin: 0.5em;
-}
+} */
 
 .App-logo {
   height: 40vmin;

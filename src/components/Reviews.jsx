@@ -4,6 +4,11 @@ import { getReviews, getSingleReview, getComments } from "../utils/api";
 import CommentBox from "./CommentBox";
 import Expandable from "./Expandable";
 import Upvote from "./Upvote";
+import styled from "styled-components";
+
+const ReviewsWrapper = styled.div`
+  grid-area: main;
+`;
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -34,7 +39,7 @@ const Reviews = () => {
   }, [category_slug]);
 
   return (
-    <div className="Reviews">
+    <ReviewsWrapper>
       {category_slug ? <h2>{category_slug}</h2> : null}
       <ul>
         {reviews.map((review) => {
@@ -57,7 +62,7 @@ const Reviews = () => {
           );
         })}
       </ul>
-    </div>
+    </ReviewsWrapper>
   );
 };
 

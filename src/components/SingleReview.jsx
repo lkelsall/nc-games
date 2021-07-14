@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
 import Upvote from "./Upvote";
+import styled from "styled-components";
+
+const SingleReviewWrapper = styled.div`
+  grid-area: main;
+`;
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -18,7 +23,7 @@ const SingleReview = () => {
   }, [review_id]);
 
   return (
-    <div>
+    <SingleReviewWrapper>
       <h1>{review.title}</h1>
       <p>{review.review_body}</p>
       <Upvote review={review} />
@@ -28,7 +33,7 @@ const SingleReview = () => {
           return <li key={comment.comment_id}>{comment.body}</li>;
         })}
       </ul>
-    </div>
+    </SingleReviewWrapper>
   );
 };
 
