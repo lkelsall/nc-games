@@ -2,11 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
 import { UserContext } from "./contexts/user";
+import GlobalStyle from "./components/styled/GlobalStyle";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SingleReview from "./components/SingleReview";
 import Reviews from "./components/Reviews";
-import GlobalStyle from "./components/styled/GlobalStyle";
 
 const GridLayout = styled.div`
   display: grid;

@@ -6,6 +6,8 @@ import { getCategories } from "../utils/api";
 const NavWrapper = styled.div`
   grid-area: nav;
   padding: 2.5%;
+  border-top: 2px solid gold;
+  background-color: #288046;
 `;
 
 const HorizontalScroll = styled.div`
@@ -14,7 +16,15 @@ const HorizontalScroll = styled.div`
 `;
 
 const CategoryLink = styled(Link)`
-  padding: 2.5%;
+  padding: 0 0.5em;
+  :link {
+    color: white;
+    text-decoration: none;
+  }
+  :visited {
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 const Nav = () => {
@@ -34,7 +44,7 @@ const Nav = () => {
             key={category.slug}
             to={`/reviews/category/${category.slug}`}
           >
-            {category.slug}
+            {category.slug[0].toUpperCase() + category.slug.slice(1)}
           </CategoryLink>
         ))}
       </HorizontalScroll>
