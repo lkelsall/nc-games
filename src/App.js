@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SingleReview from "./components/SingleReview";
 import Reviews from "./components/Reviews";
+import GlobalStyle from "./components/styled/GlobalStyle";
 
 const GridLayout = styled.div`
   display: grid;
@@ -19,6 +20,7 @@ function App() {
   const [user, setUser] = useState("cooljmessy");
   return (
     <UserContext.Provider value={{ user, setUser }}>
+      <GlobalStyle />
       <GridLayout>
         <Header />
         <Nav />

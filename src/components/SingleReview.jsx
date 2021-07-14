@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
 import Upvote from "./Upvote";
-import styled from "styled-components";
 import { MainWrapper } from "./styled/Lib";
 
 const SingleReview = () => {

@@ -4,7 +4,6 @@ import { getReviews, getSingleReview, getComments } from "../utils/api";
 import CommentBox from "./CommentBox";
 import Expandable from "./Expandable";
 import Upvote from "./Upvote";
-import styled from "styled-components";
 import { MainWrapper } from "./styled/Lib";
 
 const Reviews = () => {
