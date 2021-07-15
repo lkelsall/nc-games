@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
 import { MainWrapper } from "./styled/Lib";
 import Upvote from "./Upvote";
+import CommentBox from "./CommentBox";
 import styled from "styled-components";
 
 const SingleReviewWrapper = styled(MainWrapper)`
@@ -92,6 +93,11 @@ const SingleReview = () => {
             );
           })}
         </CommentsList>
+        <CommentBox
+          review_id={review_id}
+          comments={comments}
+          setComments={setComments}
+        />
       </CommentsSection>
     </SingleReviewWrapper>
   );
