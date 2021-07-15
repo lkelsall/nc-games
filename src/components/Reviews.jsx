@@ -9,11 +9,16 @@ const Card = styled.div`
   background-color: #f2f2f2;
   margin: 2%;
   border-left: 2px solid gold;
-  padding: 0 1em;
+  padding: 0.5px 1em;
 `;
 
 const Dropdown = styled.select`
-  margin: 0.5em;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.75em;
+  margin-left: 0.75em;
+  border: none;
+  background-color: #f2f2f2;
 `;
 
 const Reviews = () => {
