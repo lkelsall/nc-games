@@ -36,7 +36,7 @@ const Reviews = () => {
     });
   }, [category_slug, sortBy, sortOrder]);
 
-  if (loading) return <div></div>;
+  if (loading) return <MainWrapper></MainWrapper>;
   return (
     <MainWrapper>
       <Card>
