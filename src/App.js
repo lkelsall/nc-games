@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content min-content auto;
+  grid-template-rows: min-content min-content auto min-content;
   grid-template-areas: "header" "nav" "main" "footer";
   min-height: 100vh;
 `;
