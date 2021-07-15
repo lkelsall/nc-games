@@ -39,34 +39,34 @@ const Reviews = () => {
   if (loading) return <div></div>;
   return (
     <MainWrapper>
-      {category_slug ? (
-        <Card>
-          <h3>
-            {category_slug[0].toUpperCase() + category_slug.slice(1)}
-            <Dropdown
-              name="sort-by"
-              value={sortBy}
-              onChange={(event) => {
-                setSortBy(event.target.value);
-              }}
-            >
-              <option value="created_at">Date Created</option>
-              <option value="comment_count">Comment Count</option>
-              <option value="votes">Votes</option>
-            </Dropdown>
-            <Dropdown
-              name="sort-order"
-              value={sortOrder}
-              onChange={(event) => {
-                setSortOrder(event.target.value);
-              }}
-            >
-              <option value="DESC">Desc</option>
-              <option value="ASC">Asc</option>
-            </Dropdown>
-          </h3>
-        </Card>
-      ) : null}
+      <Card>
+        <h3>
+          {category_slug
+            ? category_slug[0].toUpperCase() + category_slug.slice(1)
+            : "All Categories"}
+          <Dropdown
+            name="sort-by"
+            value={sortBy}
+            onChange={(event) => {
+              setSortBy(event.target.value);
+            }}
+          >
+            <option value="created_at">Date Created</option>
+            <option value="comment_count">Comment Count</option>
+            <option value="votes">Votes</option>
+          </Dropdown>
+          <Dropdown
+            name="sort-order"
+            value={sortOrder}
+            onChange={(event) => {
+              setSortOrder(event.target.value);
+            }}
+          >
+            <option value="DESC">Desc</option>
+            <option value="ASC">Asc</option>
+          </Dropdown>
+        </h3>
+      </Card>
       {reviews.map((review) => {
         return (
           <ReviewCard key={review.review_id} review_id={review.review_id} />
