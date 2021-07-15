@@ -26,7 +26,6 @@ const ReviewImage = styled.img`
   margin-left: 1em;
   margin-bottom: 1em;
   margin-right: 0.5em;
-  border-radius: 25px;
 `;
 
 const ReviewBody = styled.p`
