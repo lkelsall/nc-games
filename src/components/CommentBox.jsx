@@ -4,16 +4,23 @@ import { postComment } from "../utils/api";
 import styled from "styled-components";
 
 const CommentInput = styled.input`
-  padding: 0.25em;
   width: 70%;
-  height: 4em;
+  padding: 0.5em;
   margin: 0.75em 0;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  :focus {
+    outline: none;
+  }
 `;
 
 const CommentButton = styled.button`
   border: 1px solid black;
   border-radius: 5px;
-  padding: 1.25em 1em;
+  padding: 0.25em 1em;
   margin-left: 0.75em;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
