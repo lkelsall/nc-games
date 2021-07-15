@@ -3,6 +3,18 @@ import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import { MainWrapper } from "./styled/Lib";
 import ReviewCard from "./ReviewCard";
+import styled from "styled-components";
+
+const Card = styled.div`
+  background-color: #f2f2f2;
+  margin: 2%;
+  border-left: 2px solid gold;
+  padding: 0 1em;
+`;
+
+const Dropdown = styled.select`
+  margin: 0.5em;
+`;
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -20,6 +32,22 @@ const Reviews = () => {
   if (loading) return <div></div>;
   return (
     <MainWrapper>
+      {category_slug ? (
+        <Card>
+          <h3>
+            {category_slug[0].toUpperCase() + category_slug.slice(1)}{" "}
+            <Dropdown name="sort-by">
+              <option value="created_at">Date Created</option>
+              <option value="comment_count">Comment Count</option>
+              <option value="votes">Votes</option>
+            </Dropdown>
+            <Dropdown name="sort-order">
+              <option value="ASC">Asc</option>
+              <option value="DESC">Desc</option>
+            </Dropdown>
+          </h3>
+        </Card>
+      ) : null}
       {reviews.map((review) => {
         return (
           <ReviewCard key={review.review_id} review_id={review.review_id} />
