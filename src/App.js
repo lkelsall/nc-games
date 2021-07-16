@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
 import { UserContext } from "./contexts/user";
 import GlobalStyle from "./components/styled/GlobalStyle";
@@ -8,21 +7,14 @@ import Nav from "./components/Nav";
 import SingleReview from "./components/SingleReview";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
-
-const GridLayout = styled.div`
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: min-content min-content auto min-content;
-  grid-template-areas: "header" "nav" "main" "footer";
-  min-height: 100vh;
-`;
+import * as S from "./components/styled/Lib";
 
 function App() {
   const [user, setUser] = useState("cooljmessy");
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <GlobalStyle />
-      <GridLayout>
+      <S.GridLayout>
         <Header />
         <Nav />
         <Switch>
@@ -37,7 +29,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-      </GridLayout>
+      </S.GridLayout>
     </UserContext.Provider>
   );
 }
