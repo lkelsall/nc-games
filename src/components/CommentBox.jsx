@@ -14,17 +14,21 @@ const CommentBox = ({ review_id, comments, setComments }) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          postComment(review_id, user, newComment)
-            .then((comment) => {
-              setNewComment("");
-              setErr(null);
-              setComments((currentComments) => {
-                return [...currentComments, comment];
+          setErr(null);
+          if (newComment.length > 0) {
+            postComment(review_id, user, newComment)
+              .then((comment) => {
+                setNewComment("");
+                setComments((currentComments) => {
+                  return [...currentComments, comment];
+                });
+              })
+              .catch(() => {
+                setErr("something went wrong");
               });
-            })
-            .catch(() => {
-              setErr("something went wrong");
-            });
+          } else {
+            setErr("new comments must not be blank");
+          }
         }}
       >
         <label htmlFor="new-comment"></label>
