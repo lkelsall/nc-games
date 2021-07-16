@@ -60,19 +60,31 @@ const SingleReview = () => {
   const [review, setReview] = useState({});
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
+    setErr(false);
     setLoading(true);
-    Promise.all([getSingleReview(review_id), getComments(review_id)]).then(
-      ([review, comments]) => {
+    Promise.all([getSingleReview(review_id), getComments(review_id)])
+      .then(([review, comments]) => {
         setReview(review);
         setComments(comments);
         setLoading(false);
-      }
-    );
+      })
+      .catch((err) => {
+        setErr(err);
+      });
   }, [review_id]);
 
-  if (loading) return <div></div>;
+  if (err) {
+    return <p>{err.message}</p>;
+  }
+  if (loading)
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
   return (
     <SingleReviewWrapper>
       <ReviewImage src={review.review_img_url} alt={review.title} />

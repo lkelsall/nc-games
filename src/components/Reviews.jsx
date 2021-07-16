@@ -27,16 +27,34 @@ const Reviews = () => {
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState("created_at");
   const [sortOrder, setSortOrder] = useState("DESC");
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
+    setErr(false);
     setLoading(true);
-    getReviews(category_slug, sortBy, sortOrder).then((reviews) => {
-      setReviews(reviews);
-      setLoading(false);
-    });
+    getReviews(category_slug, sortBy, sortOrder)
+      .then((reviews) => {
+        setReviews(reviews);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setErr(err);
+      });
   }, [category_slug, sortBy, sortOrder]);
 
-  if (loading) return <MainWrapper></MainWrapper>;
+  if (err) {
+    return (
+      <MainWrapper>
+        <p>{err.message}</p>
+      </MainWrapper>
+    );
+  }
+  if (loading)
+    return (
+      <MainWrapper>
+        <p>Loading...</p>
+      </MainWrapper>
+    );
   return (
     <MainWrapper>
       <Card>
