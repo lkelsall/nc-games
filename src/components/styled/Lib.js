@@ -118,15 +118,6 @@ export const ReviewsWrapper = styled.div`
   grid-area: main;
 `;
 
-// styled components used in SingleReview
-export const SingleReviewWrapper = styled.div`
-  grid-area: main;
-  display: grid;
-  grid-template-areas: "image" "review" "comments";
-  grid-template-rows: max-content min-content auto;
-  grid-template-columns: 100%;
-`;
-
 // styled components used in ReviewCard
 export const ReviewCardWrapper = styled.div`
   background-color: #f2f2f2;
@@ -159,6 +150,14 @@ export const ReviewBody = styled.p`
 `;
 
 // styled components used in SingleReview
+export const SingleReviewWrapper = styled.div`
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "image" "review" "comments";
+  grid-template-rows: max-content min-content auto;
+  grid-template-columns: 100%;
+`;
+
 export const BigReviewImage = styled.img`
   grid-area: image;
   width: 90%;
