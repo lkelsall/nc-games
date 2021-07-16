@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { patchReviewVotes } from "../utils/api";
-import styled from "styled-components";
-import * as S from "./styled/Lib";
-
-const UpvoteWrapper = styled.div`
-  margin-bottom: 1em;
-`;
+import { UpvoteButton } from "./styled/Lib";
 
 const Upvote = ({ review }) => {
   const [votesAdded, setVotesAdded] = useState(0);
@@ -21,14 +16,14 @@ const Upvote = ({ review }) => {
   }
 
   return (
-    <UpvoteWrapper>
+    <div>
       <span>
-        {`This Review has ${review.votes + votesAdded} Vote(s) `}{" "}
-        <S.UpvoteButton disabled={clicked} onClick={upvote}>
+        {`This Review has ${review.votes + votesAdded} Vote(s) `}
+        <UpvoteButton disabled={clicked} onClick={upvote}>
           Vote +1
-        </S.UpvoteButton>
+        </UpvoteButton>
       </span>
-    </UpvoteWrapper>
+    </div>
   );
 };
 

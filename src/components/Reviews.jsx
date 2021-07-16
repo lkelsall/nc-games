@@ -1,25 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
-import { MainWrapper } from "./styled/Lib";
+import { ReviewsWrapper, Card, Dropdown } from "./styled/Lib";
 import ReviewCard from "./ReviewCard";
-import styled from "styled-components";
-
-const Card = styled.div`
-  background-color: #f2f2f2;
-  margin: 2%;
-  border-left: 2px solid gold;
-  padding: 0.5px 1em;
-`;
-
-const Dropdown = styled.select`
-  font-size: 1em;
-  font-family: "Raleway", sans-serif;
-  font-size: 0.75em;
-  margin-left: 0.75em;
-  border: none;
-  background-color: #f2f2f2;
-`;
 
 const Reviews = () => {
   const { category_slug } = useParams();
@@ -43,20 +26,11 @@ const Reviews = () => {
   }, [category_slug, sortBy, sortOrder]);
 
   if (err) {
-    return (
-      <MainWrapper>
-        <p>{err.message}</p>
-      </MainWrapper>
-    );
+    return <p>{err.message}</p>;
   }
-  if (loading)
-    return (
-      <MainWrapper>
-        <p>Loading...</p>
-      </MainWrapper>
-    );
+  if (loading) return <p>Loading...</p>;
   return (
-    <MainWrapper>
+    <ReviewsWrapper>
       <Card>
         <h3>
           {category_slug
@@ -90,7 +64,7 @@ const Reviews = () => {
           <ReviewCard key={review.review_id} review_id={review.review_id} />
         );
       })}
-    </MainWrapper>
+    </ReviewsWrapper>
   );
 };
 

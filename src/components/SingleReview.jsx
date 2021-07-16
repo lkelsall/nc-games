@@ -1,59 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
-import { MainWrapper } from "./styled/Lib";
 import Upvote from "./Upvote";
 import CommentBox from "./CommentBox";
-import styled from "styled-components";
-
-const SingleReviewWrapper = styled(MainWrapper)`
-  display: grid;
-  grid-template-areas: "image" "review" "comments";
-  grid-template-rows: max-content min-content auto;
-  grid-template-columns: 100%;
-`;
-
-const ReviewImage = styled.img`
-  grid-area: image;
-  width: 90%;
-  height: 20em;
-  padding: 2.75%;
-  background-color: #f2f2f2;
-  margin: 2%;
-  border-left: 2px solid gold;
-`;
-
-const ReviewText = styled.article`
-  grid-area: review;
-  background-color: #f2f2f2;
-  margin: 2%;
-  border-left: 2px solid gold;
-  padding: 0.25em 1em;
-`;
-
-const CommentsSection = styled.section`
-  grid-area: comments;
-  background-color: #f2f2f2;
-  margin: 2%;
-  border-left: 2px solid gold;
-  padding: 0.25em 1em;
-`;
-
-const CommentsList = styled.ul`
-  padding: 0;
-  list-style-type: none;
-`;
-
-const SingleComment = styled.li`
-  padding: 0;
-`;
-
-const CommentAuthor = styled.p`
-  margin: 0.5em 0 1em; 0;
-  padding: 0;
-  text-align: right;
-  font-style: italic;
-`;
+import {
+  SingleReviewWrapper,
+  BigReviewImage,
+  ReviewText,
+  CommentsSection,
+  CommentsList,
+  SingleComment,
+  CommentAuthor,
+} from "./styled/Lib";
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -87,7 +45,7 @@ const SingleReview = () => {
     );
   return (
     <SingleReviewWrapper>
-      <ReviewImage src={review.review_img_url} alt={review.title} />
+      <BigReviewImage src={review.review_img_url} alt={review.title} />
       <ReviewText>
         <h2>{review.title}</h2>
         <p>{review.review_body}</p>

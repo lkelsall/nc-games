@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterWrapper = styled.footer`
+const StyledFooter = styled.footer`
   grid-area: footer;
   height: 2em;
   background-color: #288046;
@@ -9,7 +9,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const Footer = () => {
-  return <FooterWrapper />;
+  return <StyledFooter />;
 };
 
 export default Footer;

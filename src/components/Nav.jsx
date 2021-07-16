@@ -1,31 +1,6 @@
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getCategories } from "../utils/api";
-
-const NavWrapper = styled.div`
-  grid-area: nav;
-  padding: 2.5%;
-  border-top: 2px solid gold;
-  background-color: #288046;
-`;
-
-const HorizontalScroll = styled.div`
-  overflow: auto;
-  white-space: nowrap;
-`;
-
-const CategoryLink = styled(Link)`
-  padding: 0 0.5em;
-  :link {
-    color: white;
-    text-decoration: none;
-  }
-  :visited {
-    color: white;
-    text-decoration: none;
-  }
-`;
+import { NavWrapper, HorizontalScroll, CategoryLink } from "./styled/Lib";
 
 const Nav = () => {
   const [categories, setCategories] = useState([]);
