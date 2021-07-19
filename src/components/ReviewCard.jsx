@@ -14,7 +14,7 @@ const ReviewCard = ({ review }) => {
       <ReviewTitle>{review.title}</ReviewTitle>
       <ReviewImage src={review.review_img_url} alt={review.title} />
       <ReviewBody>
-        {review.review_body.slice(0, 121) + "... "}
+        {review.review_preview + "... "}
         <Link to={`/reviews/id/${review.review_id}`}>more {">>"}</Link>
       </ReviewBody>
     </ReviewCardWrapper>
