@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
-import Upvote from "./Upvote";
+import UpvoteReview from "./UpvoteReview";
 import CommentBox from "./CommentBox";
 import {
   SingleReviewWrapper,
@@ -12,6 +12,7 @@ import {
   SingleComment,
   CommentAuthor,
 } from "./styled/Lib";
+import UpvoteComment from "./UpvoteComment";
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -49,7 +50,7 @@ const SingleReview = () => {
       <ReviewText>
         <h2>{review.title}</h2>
         <p>{review.review_body}</p>
-        <Upvote review={review} />
+        <UpvoteReview review={review} />
       </ReviewText>
       <CommentsSection>
         <h3>Comments</h3>
@@ -59,6 +60,7 @@ const SingleReview = () => {
               <SingleComment key={comment.comment_id}>
                 {comment.body}
                 <CommentAuthor>- {comment.author}</CommentAuthor>
+                <UpvoteComment comment={comment} />
               </SingleComment>
             );
           })}
