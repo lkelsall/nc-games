@@ -60,9 +60,7 @@ const Reviews = () => {
         </h3>
       </Card>
       {reviews.map((review) => {
-        return (
-          <ReviewCard key={review.review_id} review_id={review.review_id} />
-        );
+        return <ReviewCard key={review.review_id} review={review} />;
       })}
     </ReviewsWrapper>
   );

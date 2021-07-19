@@ -5,14 +5,26 @@ import { NavWrapper, HorizontalScroll, CategoryLink } from "./styled/Lib";
 const Nav = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
-    getCategories().then((categories) => {
-      setCategories(categories);
-      setLoading(false);
-    });
+    getCategories()
+      .then((categories) => {
+        setCategories(categories);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setErr(err);
+      });
   }, []);
 
+  if (err) {
+    return (
+      <div>
+        <p>{err.message}</p>
+      </div>
+    );
+  }
   if (loading)
     return (
       <div>

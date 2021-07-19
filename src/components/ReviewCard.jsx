@@ -8,19 +8,7 @@ import {
   ReviewBody,
 } from "./styled/Lib";
 
-const ReviewCard = ({ review_id }) => {
-  const [review, setReview] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    getSingleReview(review_id).then((review) => {
-      setReview(review);
-      setLoading(false);
-    });
-  }, [review_id]);
-
-  if (loading) return <div></div>;
+const ReviewCard = ({ review }) => {
   return (
     <ReviewCardWrapper>
       <ReviewTitle>{review.title}</ReviewTitle>
