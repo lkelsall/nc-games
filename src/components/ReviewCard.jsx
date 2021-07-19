@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getSingleReview } from "../utils/api";
 import {
   ReviewCardWrapper,
   ReviewTitle,

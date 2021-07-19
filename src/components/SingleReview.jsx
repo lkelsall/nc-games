@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview, getComments } from "../utils/api";
 import UpvoteReview from "./UpvoteReview";
+import UpvoteComment from "./UpvoteComment";
+import DeleteComment from "./DeleteComment";
 import CommentBox from "./CommentBox";
 import {
   SingleReviewWrapper,
@@ -12,7 +14,6 @@ import {
   SingleComment,
   CommentAuthor,
 } from "./styled/Lib";
-import UpvoteComment from "./UpvoteComment";
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -59,6 +60,7 @@ const SingleReview = () => {
             return (
               <SingleComment key={comment.comment_id}>
                 {comment.body}
+                <DeleteComment setComments={setComments} comment={comment} />
                 <CommentAuthor>- {comment.author}</CommentAuthor>
                 <UpvoteComment comment={comment} />
               </SingleComment>

@@ -41,3 +41,7 @@ export const postComment = async (review_id, user, comment) => {
 export const patchCommentVotes = async (comment_id) => {
   await reviewsAPI.patch(`/comments/${comment_id}`, { inc_votes: 1 });
 };
+
+export const deleteComment = async (comment_id) => {
+  await reviewsAPI.delete(`/comments/${comment_id}`);
+};
