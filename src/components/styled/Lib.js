@@ -58,7 +58,7 @@ export const Card = styled.div`
 `;
 
 // styled components used in Header
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   grid-area: header;
   display: grid;
   grid-template-columns: max-content auto max-content;
@@ -89,7 +89,7 @@ export const UserText = styled.span`
 `;
 
 // styled components used in Nav
-export const NavWrapper = styled.div`
+export const NavWrapper = styled.nav`
   grid-area: nav;
   padding: 2.5%;
   border-top: 2px solid gold;
@@ -114,12 +114,12 @@ export const CategoryLink = styled(Link)`
 `;
 
 // styled components used in Reviews
-export const ReviewsWrapper = styled.div`
+export const ReviewsWrapper = styled.main`
   grid-area: main;
 `;
 
 // styled components used in ReviewCard
-export const ReviewCardWrapper = styled.div`
+export const ReviewCardWrapper = styled.article`
   background-color: #f2f2f2;
   margin: 0.5em;
   border-left: 2px solid gold;
@@ -150,7 +150,7 @@ export const ReviewBody = styled.p`
 `;
 
 // styled components used in SingleReview
-export const SingleReviewWrapper = styled.div`
+export const SingleReviewWrapper = styled.article`
   grid-area: main;
   display: grid;
   grid-template-areas: "image" "review" "comments";
@@ -168,7 +168,7 @@ export const BigReviewImage = styled.img`
   border-left: 2px solid gold;
 `;
 
-export const ReviewText = styled.article`
+export const ReviewText = styled.section`
   grid-area: review;
   background-color: #f2f2f2;
   margin: 2%;
