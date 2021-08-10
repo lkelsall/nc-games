@@ -43,7 +43,7 @@ export const UpvoteButton = styled(Button)`
 
 export const Dropdown = styled.select`
   font-family: "Raleway", sans-serif;
-  font-size: 0.75em;
+  font-size: 8pt;
   margin-left: 0.75em;
   border: none;
   background-color: #f2f2f2;
@@ -115,6 +115,10 @@ export const CategoryLink = styled(Link)`
 // styled components used in Reviews
 export const ReviewsWrapper = styled.main`
   grid-area: main;
+`;
+
+export const CategoryHeading = styled.h4`
+  font-size: 12pt;
 `;
 
 // styled components used in ReviewCard

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
-import { ReviewsWrapper, Card, Dropdown } from "./styled/Lib";
+import { ReviewsWrapper, Card, Dropdown, CategoryHeading } from "./styled/Lib";
 import ReviewCard from "./ReviewCard";
 
 const Reviews = () => {
@@ -32,7 +32,7 @@ const Reviews = () => {
   return (
     <ReviewsWrapper>
       <Card>
-        <h3>
+        <CategoryHeading>
           {category_slug
             ? category_slug[0].toUpperCase() + category_slug.slice(1)
             : "All Categories"}
@@ -57,7 +57,7 @@ const Reviews = () => {
             <option value="DESC">Desc</option>
             <option value="ASC">Asc</option>
           </Dropdown>
-        </h3>
+        </CategoryHeading>
       </Card>
       {reviews.map((review) => {
         return <ReviewCard key={review.review_id} review={review} />;
