@@ -42,7 +42,6 @@ export const UpvoteButton = styled(Button)`
 `;
 
 export const Dropdown = styled.select`
-  font-size: 1em;
   font-family: "Raleway", sans-serif;
   font-size: 0.75em;
   margin-left: 0.75em;
@@ -52,7 +51,7 @@ export const Dropdown = styled.select`
 
 export const Card = styled.div`
   background-color: #f2f2f2;
-  margin: 2%;
+  margin: 0.5em;
   border-left: 2px solid gold;
   padding: 0.5px 1em;
 `;
