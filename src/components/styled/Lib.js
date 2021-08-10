@@ -55,9 +55,12 @@ export const Dropdown = styled.select`
 
 export const Card = styled.div`
   background-color: #f2f2f2;
-  margin: 0.5em;
+  margin: 0.5em 0.5em 0 0.5em;
   border-left: 2px solid gold;
   padding: 0.5px 1em;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
 // styled components used in Header
@@ -127,6 +130,13 @@ export const CategoryLink = styled(Link)`
 // styled components used in Reviews
 export const ReviewsWrapper = styled.main`
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
 `;
 
 export const CategoryHeading = styled.h4`
@@ -145,6 +155,9 @@ export const ReviewCardWrapper = styled.article`
   grid-template-columns: min-content auto;
   grid-template-rows: max-content auto;
   grid-template-areas: "title title" "image body";
+  @media (min-width: 768px) {
+    width: 32%;
+  }
 `;
 
 export const ReviewTitle = styled.h2`
