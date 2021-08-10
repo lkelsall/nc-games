@@ -65,6 +65,10 @@ export const HeaderWrapper = styled.header`
   grid-template-areas: "page-title . user-detail";
   padding: 5%;
   background-color: #288046;
+
+  @media (min-width: 768px) {
+    padding: 2%;
+  }
 `;
 
 export const PageTitle = styled(Link)`
@@ -93,6 +97,10 @@ export const NavWrapper = styled.nav`
   padding: 3.5% 2%;
   border-top: 2px solid gold;
   background-color: #288046;
+
+  @media (min-width: 768px) {
+    padding: 2%;
+  }
 `;
 
 export const HorizontalScroll = styled.div`
@@ -101,7 +109,7 @@ export const HorizontalScroll = styled.div`
 `;
 
 export const CategoryLink = styled(Link)`
-  padding: 0 0.5em;
+  padding: 0 1em 0 0.25em;
   :link {
     color: white;
     text-decoration: none;
