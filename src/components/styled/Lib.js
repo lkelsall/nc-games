@@ -90,7 +90,7 @@ export const UserText = styled.span`
 // styled components used in Nav
 export const NavWrapper = styled.nav`
   grid-area: nav;
-  padding: 2.5%;
+  padding: 3.5% 2%;
   border-top: 2px solid gold;
   background-color: #288046;
 `;
