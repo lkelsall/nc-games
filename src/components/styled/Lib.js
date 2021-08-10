@@ -47,6 +47,10 @@ export const Dropdown = styled.select`
   margin-left: 0.75em;
   border: none;
   background-color: #f2f2f2;
+
+  @media (min-width: 768px) {
+    font-size: 12pt;
+  }
 `;
 
 export const Card = styled.div`
@@ -127,6 +131,9 @@ export const ReviewsWrapper = styled.main`
 
 export const CategoryHeading = styled.h4`
   font-size: 12pt;
+  @media (min-width: 768px) {
+    font-size: 14pt;
+  }
 `;
 
 // styled components used in ReviewCard
