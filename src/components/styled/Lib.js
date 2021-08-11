@@ -60,6 +60,7 @@ export const Card = styled.div`
   padding: 0.5px 1em;
   @media (min-width: 768px) {
     width: 100%;
+    align-self: start;
   }
 `;
 
@@ -136,6 +137,7 @@ export const ReviewsWrapper = styled.main`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
+    align-content: start;
   }
 `;
 
@@ -157,6 +159,7 @@ export const ReviewCardWrapper = styled.article`
   grid-template-areas: "title title" "image body";
   @media (min-width: 768px) {
     width: 32%;
+    height: 17em;
   }
 `;
 
