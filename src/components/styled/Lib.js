@@ -185,8 +185,9 @@ export const SingleReviewWrapper = styled.article`
   grid-area: main;
   display: grid;
   grid-template-areas: "image" "review" "comments";
-  grid-template-rows: max-content min-content auto;
-  grid-template-columns: 100%;
+  @media (min-width: 768px) {
+    grid-template-areas: "image review" "comments comments";
+  }
 `;
 
 export const BigReviewImage = styled.img`
@@ -194,25 +195,28 @@ export const BigReviewImage = styled.img`
   width: 90%;
   height: 20em;
   padding: 2.75%;
-  background-color: #f2f2f2;
   margin: 2%;
+  background-color: #f2f2f2;
   border-left: 2px solid gold;
 `;
 
 export const ReviewText = styled.section`
   grid-area: review;
   background-color: #f2f2f2;
-  margin: 2%;
   border-left: 2px solid gold;
+  margin: 2%;
   padding: 0.25em 1em;
 `;
 
 export const CommentsSection = styled.section`
   grid-area: comments;
   background-color: #f2f2f2;
-  margin: 2%;
   border-left: 2px solid gold;
   padding: 0.25em 1em;
+  margin: 2%;
+  @media (min-width: 768px) {
+    margin: 1%;
+  }
 `;
 
 export const CommentsList = styled.ul`
