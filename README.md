@@ -2,9 +2,9 @@
 
 A website for posting, commenting on and upvoting board game reviews, created using ReactJS.
 
-A live version of this project is hosted on Netlify here (add link).
+A live version of this project is hosted on Netlify [here](https://nc-board-games.netlify.app/).
 
-This website uses an Express API backend, which has its own repo on GitHub here.
+This website uses an Express API backend, which has its own repo on GitHub [here](https://github.com/lkelsall/nc-games-api).
 
 ## Running Locally
 
