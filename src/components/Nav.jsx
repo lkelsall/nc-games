@@ -25,12 +25,7 @@ const Nav = () => {
       </div>
     );
   }
-  if (loading)
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
+  if (loading) return <div></div>;
   return (
     <NavWrapper>
       <HorizontalScroll>

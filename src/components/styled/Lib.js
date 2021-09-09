@@ -73,6 +73,7 @@ export const HeaderWrapper = styled.header`
   grid-template-areas: "page-title . user-detail";
   padding: 5%;
   background-color: #288046;
+  border-bottom: 2px solid gold;
 
   @media (min-width: 768px) {
     padding: 2%;
@@ -103,7 +104,6 @@ export const UserText = styled.span`
 export const NavWrapper = styled.nav`
   grid-area: nav;
   padding: 3.5% 2%;
-  border-top: 2px solid gold;
   background-color: #288046;
 
   @media (min-width: 768px) {
@@ -146,6 +146,11 @@ export const CategoryHeading = styled.h4`
   @media (min-width: 768px) {
     font-size: 14pt;
   }
+`;
+
+export const LoadingText = styled.p`
+  font-size: 16pt;
+  text-align: center;
 `;
 
 // styled components used in ReviewCard

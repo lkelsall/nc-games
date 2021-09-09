@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
-import { ReviewsWrapper, Card, Dropdown, CategoryHeading } from "./styled/Lib";
+import {
+  ReviewsWrapper,
+  Card,
+  Dropdown,
+  CategoryHeading,
+  LoadingText,
+} from "./styled/Lib";
 import ReviewCard from "./ReviewCard";
 
 const Reviews = () => {
@@ -28,7 +34,7 @@ const Reviews = () => {
   if (err) {
     return <p>{err.message}</p>;
   }
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingText>Loading...</LoadingText>;
   return (
     <ReviewsWrapper>
       <Card>
