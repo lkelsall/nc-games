@@ -156,15 +156,16 @@ export const LoadingText = styled.p`
 // styled components used in ReviewCard
 export const ReviewCardWrapper = styled.article`
   background-color: #f2f2f2;
-  margin: 0.5em;
+  margin: 0.2em 0.5em;
   border-left: 2px solid gold;
   display: grid;
   grid-template-columns: min-content auto;
   grid-template-rows: max-content auto;
   grid-template-areas: "title title" "image body";
   @media (min-width: 768px) {
-    width: 32%;
+    width: 31%;
     height: 17em;
+    margin: 1%;
   }
 `;
 
